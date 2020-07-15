@@ -255,7 +255,7 @@ Tengo un software que podría integrar con mi Tienda Virtual para facturar</opti
       </div>
       <div class="modal-footer">
         <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>-->
-        <button @click="sumaPuntaje" type="button" data-toggle="popover" data-target="#express" class="btn btn-test mx-auto">CONOCE LA TIENDA IDEAL PARA TI</button>
+        <button @click="sumaPuntaje" type="button" data-dismiss="modal" data-toggle="popover" data-target="#express" class="btn btn-test mx-auto">CONOCE LA TIENDA IDEAL PARA TI</button>
       </div>
     </div>
   </div>
