@@ -1,14 +1,15 @@
 <template>
   <div id="app">
-    <div class="nav col-sm pt-3">
-        <div class="logos mx-auto align-middle">
+    <div class="nav col-sm-12 pt-3">
+        <div class="mx-auto">
+          <div class="logos align-middle">
           <a href="https://www.cpcagencia.com/#!/" target="_blanck">
             <img class="logo" src="@/assets/img/cpc.png" alt="CPC Agencia">
           </a>
           <a href="https://www.mc.net.co/" target="_blanck">
             <img class="logo" src="@/assets/img/Mc.png" alt="Media Commerce">
           </a>
-          <div class="redes mx-auto">
+           <div class="redes">
           <ul>
             <li><a class="fa fa-facebook" href="https://www.facebook.com/CPCagencia/" target="_blanck"></a></li>
             <li><a class="fa fa-instagram" href="https://www.instagram.com/cpcagencia/?hl=es" target="_blanck"></a></li>
@@ -17,14 +18,19 @@
           </ul>
         </div> 
         </div>
+        
+        </div>
     </div>
-    <div class="bkt mx-auto">
-      <h1 class="title-md font-weight-bold" >El mundo cerró,<br> internet esta abierto</h1>
+
+    <div class="bkt mx-auto mb-5">
+      <h1 class="title-md font-weight-bold w-100" >El mundo cerró,<br> internet esta abierto</h1>
       <h2>Somos expertos en montar una tienda virtual</h2>
        <button class="btn btn-test mx-auto btn-success rounded-pill btn-lg mb-5" data-toggle="modal" data-target="#Test">Hacer test</button>
     </div>
+    <!--section2-->
+
     <div class="mx-auto section2 mt-4"><!--container-->
-       <div class="container">
+       <div class="container" style="margin-top:200px">
           <h2 class="title-section2 display-3 font-weight-bold" >Nosotros</h2>
           <h3>Tenemos 3 tipos de soluciones para montar tu tienda <br>virtual dependiendo de tu necesidad</h3>
        </div>
@@ -63,7 +69,7 @@ Para ello las Tiendas VTEX se articularán con todo tu equipo y te brindarán la
           </div>
         </div>
        </div>
-       <button class="btn btn-test mx-auto btn-success rounded-pill btn-lg mb-5" data-toggle="modal" data-target="#Test">Hacer test</button>
+       <button class="btn btn-test mx-auto btn-success rounded-pill btn-lg  my-5" data-toggle="modal" data-target="#Test">Hacer test</button>
     </div>
     <!--SECTION3-->
     <div class="container my-5">
@@ -87,7 +93,7 @@ Para ello las Tiendas VTEX se articularán con todo tu equipo y te brindarán la
       </div>
     </div>
     <!--Section4-->
-    <div class="section4 ">
+    <div class="section4 w-100" style="height:700px">
       <h3 class="title-center pt-4 pb-2 title-blue-dark">MIRA NUESTRO VÍDEO</h3>
       <div class="container fondo2">
       </div>
@@ -262,7 +268,7 @@ Tengo un software que podría integrar con mi Tienda Virtual para facturar</opti
 </div>
 <!--modales-->
 <div class="modal fade" id="express" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="title-elegida">LA OPCIÓN IDEAL PARA TI ES UNA</h5>
@@ -275,15 +281,17 @@ Tengo un software que podría integrar con mi Tienda Virtual para facturar</opti
             <h3>Tienda {{tElegida.name}}</h3>
           <p>{{tElegida.body}}</p>
           <hr>
+          <a href="https://www.cpcagencia.com/#!/contactanos">Visitanos</a>
+          <hr>
           <h2 class="text-center">Tambien te pueden interesar</h2>
           <div class="row">
             <div class="col-6">
-              <button @click="aE();Puntaje();" type="button" data-target="#express" class="btn btn-test mx-auto">{{tElegida.a.name}}</button>
+              <button @click="aE();Puntaje();" type="button" data-target="#express" class="btn btn-test mx-auto w-80">{{tElegida.a.name}}</button>
 
               
             </div>
             <div class="col-6">
-               <button @click="bE();Puntaje();" type="button" data-target="#express" class="btn btn-test mx-auto">{{tElegida.b.name}}</button>
+               <button @click="bE();Puntaje();" type="button" data-target="#express" class="btn btn-test mx-auto w-80">{{tElegida.b.name}}</button>
             </div>
           </div>
 
@@ -371,10 +379,9 @@ export default {
 5. Se articulará con alguna de las pasarelas de pago más conocidas del país
 
 ¿Estamos listos? 
-¡Hablemos! 
-(espacio para info de contacto)`
+¡Hablemos!`
 
-this.tElegida.a.name="TIENDAS PERSONALIZADAS - MARKET PLACE"
+this.tElegida.a.name="TIENDAS PERSONALIZADAS"
 this.tElegida.a.body=`Sabemos que tu producto necesita algunos desarrollos a la medida, juntos construiremos tu solución. Con nuestras Tiendas Personalizadas, podrás acceder a una amplia gama de opciones para tener tu tienda como siempre has querido, con presencia en el nuevo MarketPlace de MediaCommerce, a través del cual, podrás dar a conocer tus productos y servicios rápidamente.`
 
 this.tElegida.b.name="TIENDAS VTEX"
@@ -392,8 +399,7 @@ this.tElegida.b.body=`Si quieres articular tu tienda con otras plataformas como 
 6. Además, si estás listo, podrás integrar tu software de inventarios y facturación electrónica
 
 ¿Estamos listos? 
-¡Hablemos! 
-(espacio para info de contacto)`
+¡Hablemos!`
 
 this.tElegida.a.name="TIENDAS EXPRESS"
 this.tElegida.a.body=`En tan solo 5 dias tendrás tu Tienda ONLINE con pasarela de pago para llevar por primera vez tus productos a digital. Por ello, con nuestras Tiendas Express, podrás tener rápidamente tus servicios en la Red y empezar a vender a todo el país de manera masiva, 24/7; a través de una amplia gama de plantillas personalizables con las que podrás crear tu Tienda como siempre has querido.
@@ -413,12 +419,11 @@ this.tElegida.b.body=`Si quieres articular tu tienda con otras plataformas como 
 6. Además, a través de la Tienda VTEX podrás crear desarrollos a tu medida, en los que tus clientes pueden tener espacios de personalización de tus productos, o vivir experiencias de usuario increíbles a través de diferentes aplicativos.  
 
 ¿Estamos listos? 
-¡Hablemos! 
-(espacio para info de contacto)`
+¡Hablemos!`
 this.tElegida.a.name="TIENDAS EXPRESS"
 this.tElegida.a.body=`En tan solo 5 dias tendrás tu Tienda ONLINE con pasarela de pago para llevar por primera vez tus productos a digital. Por ello, con nuestras Tiendas Express, podrás tener rápidamente tus servicios en la Red y empezar a vender a todo el país de manera masiva, 24/7; a través de una amplia gama de plantillas personalizables con las que podrás crear tu Tienda como siempre has querido.
 `
-this.tElegida.b.name="TIENDAS PERSONALIZADAS - MARKET PLACE"
+this.tElegida.b.name="TIENDAS PERSONALIZADAS"
 this.tElegida.b.body=`Sabemos que tu producto necesita algunos desarrollos a la medida, juntos construiremos tu solución. Con nuestras Tiendas Personalizadas, podrás acceder a una amplia gama de opciones para tener tu tienda como siempre has querido, con presencia en el nuevo MarketPlace de MediaCommerce, a través del cual, podrás dar a conocer tus productos y servicios rápidamente. 
 `
         }
@@ -445,7 +450,7 @@ this.tElegida.b.body=`Sabemos que tu producto necesita algunos desarrollos a la 
   z-index: 1;
 }
 .logos{
-  width: 700px;
+  /*width: 40%;*/
   cursor: pointer;
 }
 .logo{
@@ -474,7 +479,7 @@ li a{
   top: 0px;
   left: 15px;
   width: 98%;
-  height: 605px;
+  height: 100%;
   background-image: url("assets/img/002.jpg");
   background-position: center;
   text-align: center;
@@ -488,7 +493,7 @@ li a{
   width:300px;
 }
 .btn-more{
-      font-size: 1.2rem;
+    font-size: 1.2rem;
     position: relative;
     display: block;
     bottom: 0;
@@ -524,17 +529,18 @@ li a{
 .section4{
   width: 100%;
   background-color: #E5E6E8;
-  height: 900px;
+  height: 500px;
 }
 .title-center{
   text-align: center;
 }
 .fondo2{
-  width: 80%;
-  height: 90%;
   background-image: url("assets/img/001.jpg");
-  background-position: center;
-  background-size: cover;
+  width: 100%;
+  height: 100%;
+    /* background-position: center; */
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .img-card-person{
   border-color:#3D57DF;
