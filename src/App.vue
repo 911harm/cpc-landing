@@ -255,7 +255,7 @@ Tengo un software que podría integrar con mi Tienda Virtual para facturar</opti
       </div>
       <div class="modal-footer">
         <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>-->
-        <button @click="sumaPuntaje" type="button" data-dismiss="modal" data-toggle="modal" data-target="#express" class="btn btn-test mx-auto">CONOCE LA TIENDA IDEAL PARA TI</button>
+        <button @click="suma();Puntaje();" type="button" data-dismiss="modal" data-toggle="modal" data-target="#express" class="btn btn-test mx-auto">CONOCE LA TIENDA IDEAL PARA TI</button>
       </div>
     </div>
   </div>
@@ -274,6 +274,18 @@ Tengo un software que podría integrar con mi Tienda Virtual para facturar</opti
         <div>
             <h3>Tienda {{tElegida.name}}</h3>
           <p>{{tElegida.body}}</p>
+          <hr>
+          <h2 class="text-center">Tambien te pueden interesar</h2>
+          <div class="row">
+            <div class="col-6">
+              <button @click="aE();Puntaje();" type="button" data-target="#express" class="btn btn-test mx-auto">{{tElegida.a.name}}</button>
+
+              
+            </div>
+            <div class="col-6">
+               <button @click="bE();Puntaje();" type="button" data-target="#express" class="btn btn-test mx-auto">{{tElegida.b.name}}</button>
+            </div>
+          </div>
 
 
 
@@ -284,8 +296,9 @@ Tengo un software que podría integrar con mi Tienda Virtual para facturar</opti
   
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-test col-2" data-dismiss="modal">Cerrar</button>
+        <!--<button type="button" class="btn btn-primary">Volver a Realizar la Prueba</button>-->
+        <button class="btn btn-test col-2" data-dismiss="modal" data-toggle="modal" data-target="#Test">Volver</button>
       </div>
     </div>
   </div>
@@ -299,7 +312,7 @@ export default {
     return{
       puntaje:0,
       tienda:0,
-      tElegida:{name:"",body:""},
+      tElegida:{name:"",body:"",a:{body:"",name:""},b:{body:"",name:""}},
       p1:0,
        p2:0,
         p3:0,
@@ -307,13 +320,45 @@ export default {
           p5:0,
            p6:0,
             p7:0,
+            p8:0
 
     }
   },
-  methods:{
-    sumaPuntaje:function (){
 
-       this.puntaje=this.p1+this.p2+this.p3+this.p4+this.p5+this.p6+this.p7;
+  methods:{
+    aE:function (){
+      if(this.tienda===0){
+      this.puntaje=11;
+      this.Puntaje();}
+
+
+      else if(this.tienda===1){
+      this.puntaje=5;
+      this.Puntaje();}
+
+      else if(this.tienda===2){
+      this.puntaje=5;
+      this.Puntaje();}
+      
+    },bE:function (){
+       if(this.tienda===0){
+      this.puntaje=22;
+      this.Puntaje();}
+
+      else if(this.tienda===1){
+      this.puntaje=22;
+      this.Puntaje();}
+
+      else if(this.tienda===2){
+      this.puntaje=11;
+      this.Puntaje();}
+      
+      
+    }
+    ,suma:function (){
+      this.puntaje=this.p1+this.p2+this.p3+this.p4+this.p5+this.p6+this.p7+this.p8;
+      },
+    Puntaje:function (){  
 
         if(this.puntaje<=10){
           this.tienda=0;
@@ -328,6 +373,12 @@ export default {
 ¿Estamos listos? 
 ¡Hablemos! 
 (espacio para info de contacto)`
+
+this.tElegida.a.name="TIENDAS PERSONALIZADAS - MARKET PLACE"
+this.tElegida.a.body=`Sabemos que tu producto necesita algunos desarrollos a la medida, juntos construiremos tu solución. Con nuestras Tiendas Personalizadas, podrás acceder a una amplia gama de opciones para tener tu tienda como siempre has querido, con presencia en el nuevo MarketPlace de MediaCommerce, a través del cual, podrás dar a conocer tus productos y servicios rápidamente.`
+
+this.tElegida.b.name="TIENDAS VTEX"
+this.tElegida.b.body=`Si quieres articular tu tienda con otras plataformas como inventario, facturación y despachos, estás buscando la mejor plataforma para gestionar toda tu estrategia e-commerce. Para ello las Tiendas VTEX se articularán con todo tu equipo y te brindarán las mejores soluciones de personalización y estilo en tus ventas, además, tendrás los mejores beneficios de funcionalidad y seguridad en los procesos transaccionales de tus clientes.`
         }
         if(this.puntaje>10 && this.puntaje<=21){
           this.tienda=1;
@@ -343,6 +394,12 @@ export default {
 ¿Estamos listos? 
 ¡Hablemos! 
 (espacio para info de contacto)`
+
+this.tElegida.a.name="TIENDAS EXPRESS"
+this.tElegida.a.body=`En tan solo 5 dias tendrás tu Tienda ONLINE con pasarela de pago para llevar por primera vez tus productos a digital. Por ello, con nuestras Tiendas Express, podrás tener rápidamente tus servicios en la Red y empezar a vender a todo el país de manera masiva, 24/7; a través de una amplia gama de plantillas personalizables con las que podrás crear tu Tienda como siempre has querido.
+`
+this.tElegida.b.name="TIENDAS VTEX"
+this.tElegida.b.body=`Si quieres articular tu tienda con otras plataformas como inventario, facturación y despachos, estás buscando la mejor plataforma para gestionar toda tu estrategia e-commerce. Para ello las Tiendas VTEX se articularán con todo tu equipo y te brindarán las mejores soluciones de personalización y estilo en tus ventas, además, tendrás los mejores beneficios de funcionalidad y seguridad en los procesos transaccionales de tus clientes.`
         }
         if(this.puntaje>=22)
         {this.tienda=2
@@ -358,6 +415,12 @@ export default {
 ¿Estamos listos? 
 ¡Hablemos! 
 (espacio para info de contacto)`
+this.tElegida.a.name="TIENDAS EXPRESS"
+this.tElegida.a.body=`En tan solo 5 dias tendrás tu Tienda ONLINE con pasarela de pago para llevar por primera vez tus productos a digital. Por ello, con nuestras Tiendas Express, podrás tener rápidamente tus servicios en la Red y empezar a vender a todo el país de manera masiva, 24/7; a través de una amplia gama de plantillas personalizables con las que podrás crear tu Tienda como siempre has querido.
+`
+this.tElegida.b.name="TIENDAS PERSONALIZADAS - MARKET PLACE"
+this.tElegida.b.body=`Sabemos que tu producto necesita algunos desarrollos a la medida, juntos construiremos tu solución. Con nuestras Tiendas Personalizadas, podrás acceder a una amplia gama de opciones para tener tu tienda como siempre has querido, con presencia en el nuevo MarketPlace de MediaCommerce, a través del cual, podrás dar a conocer tus productos y servicios rápidamente. 
+`
         }
     }
   },
