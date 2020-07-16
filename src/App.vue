@@ -36,7 +36,7 @@
               <h5 class="card-title font-weight-bold" style="font-size:2rem">TIENDA EXPRESS</h5>
                 <p class="card-text display-5">En tan solo 5 dias tendrás tu tienda con pasarela de pago para llevar por primera vez tus productos a digital.</p>
                 <button type="button" data-toggle="popover" data-container="body" data-placement="bottom" data-content="
-En tan solo 5 dias tendrás tu Tienda ONLINE con pasarela de pago para llevar por primera vez tus productos a digital. Por ello, con nuestras Tiendas Express, podrás tener rápidamente tus servicios en la Red y empezar a vender a todo el país de manera masiva, 24/7; a través de una amplia gama de plantillas personalizables con las que podrás crear tu Tienda como siempre has querido." class="btn btn-success btn-test btn-more">Ver más</button>
+Por ello, con nuestras Tiendas Express, podrás tener rápidamente tus servicios en la Red y empezar a vender a todo el país de manera masiva, 24/7; a través de una amplia gama de plantillas personalizables con las que podrás crear tu Tienda como siempre has querido." class="btn btn-success btn-test btn-more">Ver más</button>
             </div>
          </div>
         </div>
@@ -45,9 +45,9 @@ En tan solo 5 dias tendrás tu Tienda ONLINE con pasarela de pago para llevar po
             <img class="img-card-tiendas d-block" src="@/assets/img/tienda-personalizada.png" alt="TIENDA PERSONALIZADA">
             <div class="card-body col-8 text-left card-body-tiendas">
               <h5 class="card-title font-weight-bold" style="font-size:2rem">TIENDA PERSONALIZADA</h5>
-                <p class="card-text display-5">Sabemos que tu producto necesita algunosdesarrollos a la medida, juntos construiremos tu solucion</p>
+                <p class="card-text display-5">Sabemos que tu producto necesita algunosdesarrollos a la medida, juntos construiremos tu solución</p>
                   <button type="button" data-toggle="popover" data-container="body" data-placement="bottom" data-content="
-Sabemos que tu producto necesita algunos desarrollos a la medida, juntos construiremos tu solución. Con nuestras Tiendas Personalizadas, podrás acceder a una amplia gama de opciones para tener tu tienda como siempre has querido, con presencia en el nuevo MarketPlace de MediaCommerce, a través del cual, podrás dar a conocer tus productos y servicios rápidamente. " class="btn btn-success btn-test btn-more">Ver más</button>
+Con nuestras Tiendas Personalizadas, podrás acceder a una amplia gama de opciones para tener tu tienda como siempre has querido, con presencia en el nuevo MarketPlace de MediaCommerce, a través del cual, podrás dar a conocer tus productos y servicios rápidamente. " class="btn btn-success btn-test btn-more">Ver más</button>
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@ Sabemos que tu producto necesita algunos desarrollos a la medida, juntos constru
               <h5 class="card-title font-weight-bold" style="font-size:2rem">TIENDA VTEX</h5>
                 <p class="card-text display-5">Quieres articular tu tieda con otras plataformas como inventario, facturación y despachos, estas buscando la mejor plataforma para gestionar toda tu estrategia e-commerce.</p>
                   <button type="button" data-toggle="popover" data-container="body" data-placement="bottom" data-content="
-Si quieres articular tu tienda con otras plataformas como inventario, facturación y despachos, estás buscando la mejor plataforma para gestionar toda tu estrategia e-commerce. Para ello las Tiendas VTEX se articularán con todo tu equipo y te brindarán las mejores soluciones de personalización y estilo en tus ventas, además, tendrás los mejores beneficios de funcionalidad y seguridad en los procesos transaccionales de tus clientes. " class="btn btn-success btn-test btn-more">Ver más</button>
+Para ello las Tiendas VTEX se articularán con todo tu equipo y te brindarán las mejores soluciones de personalización y estilo en tus ventas, además, tendrás los mejores beneficios de funcionalidad y seguridad en los procesos transaccionales de tus clientes. " class="btn btn-success btn-test btn-more">Ver más</button>
             </div>
           </div>
         </div>
@@ -177,7 +177,7 @@ Si quieres articular tu tienda con otras plataformas como inventario, facturaci�
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body ">
         <form class="form-group">
           <div class="form-group">
     <label>¿Tienes ya un hosting y/o dominio adquirido para tu nueva Tienda Virtual?</label>
@@ -255,7 +255,37 @@ Tengo un software que podría integrar con mi Tienda Virtual para facturar</opti
       </div>
       <div class="modal-footer">
         <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>-->
-        <button @click="sumaPuntaje" type="button" data-dismiss="modal" data-toggle="popover" data-target="#express" class="btn btn-test mx-auto">CONOCE LA TIENDA IDEAL PARA TI</button>
+        <button @click="sumaPuntaje" type="button" data-dismiss="modal" data-toggle="modal" data-target="#express" class="btn btn-test mx-auto">CONOCE LA TIENDA IDEAL PARA TI</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--modales-->
+<div class="modal fade" id="express" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="title-elegida">LA OPCIÓN IDEAL PARA TI ES UNA</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"><!--magia-->
+        <div>
+            <h3>Tienda {{tElegida.name}}</h3>
+          <p>{{tElegida.body}}</p>
+
+
+
+
+
+
+        </div>
+  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
@@ -269,6 +299,7 @@ export default {
     return{
       puntaje:0,
       tienda:0,
+      tElegida:{name:"",body:""},
       p1:0,
        p2:0,
         p3:0,
@@ -280,22 +311,54 @@ export default {
     }
   },
   methods:{
-    sumaPuntaje(){
+    sumaPuntaje:function (){
+
        this.puntaje=this.p1+this.p2+this.p3+this.p4+this.p5+this.p6+this.p7;
+
         if(this.puntaje<=10){
           this.tienda=0;
+          this.tElegida.name="Express";
+          this.tElegida.body=`Con nuestra Tienda Express podrás tener una solución ágil y real para comercializar tus productos o servicios, en solo 5 días podrás tener montado tu negocio en la red y vender a todo el país. Las Tiendas Express permiten a través de un paquete de plantillas predeterminadas:
+1. Pesonalizar tu logo, banners, ctegorías y productos, referencias, precios, direcciones y políticas de pagos y envíos.
+2. Contará con un espacio tipo Blog para que posiciones tu página con contenido actualizado, y con un botón a tu whatsapp para responder las dudas de tus clientes.
+3. No necesitas un equipo experto para tramitarla y mantenerla actualizada, de nuestra mano, tendrás una tienda funcional que vende por ti 24/7
+4. Podrás cargar tus inventarios una o dos veces por semana según tu rotación
+5. Se articulará con alguna de las pasarelas de pago más conocidas del país
 
+¿Estamos listos? 
+¡Hablemos! 
+(espacio para info de contacto)`
         }
         if(this.puntaje>10 && this.puntaje<=21){
           this.tienda=1;
-          
+          this.tElegida.name="Personalizada";
+          this.tElegida.body=`Con nuestras Tiendas Personalizadas en el Market Place de MediaCommerce, tendrás una solución más a la medida de tus necesidades y a través de la cual, en un período no mayor a 4 semanas, podrás tener muchos beneficios para empezar o llevar al siguiente nivel tu canal de venta digital. Con este tipo de Tiendas podrás:
+1. Pesonalizar tu logo, colores, categorías y productos, referencias, precios, canales de ventas y políticas de pagos y envíos.
+2. Podrás configurar tu upselling, y los tipos de clientes que tendrás para ofrecer diferentes beneficios.
+3. Tendrás categorías o tipos de usuarios dentro de tu equipo que tengan acceso a diferentes paneles de administración de la tienda. Así como también podrás configurar tu fuerza de venta dentro de la Tienda. 
+4. Tú y tus clientes recibirán notificaciones de venta y compra por correo electrónico.
+5. Tú y tu equipo recibirán un espacio de entrenamiento para poder administrar correctamente la Tienda
+6. Además, si estás listo, podrás integrar tu software de inventarios y facturación electrónica
+
+¿Estamos listos? 
+¡Hablemos! 
+(espacio para info de contacto)`
         }
         if(this.puntaje>=22)
         {this.tienda=2
+         this.tElegida.name="Vtex";
+          this.tElegida.body=`Nuestros desarrollo de Tiendas VTEX son un gran salto para tus procesos de venta ONLINE. A través de esta gran plataforma Brasilera, que actualmente tiene el 90% del mercado e-commerce de Colombia; podrás desarrollar completamente a tu medida tu nueva Tienda Virtual y diseñar estrategias comerciales agresivas que te ayuden a vender más:
+1. Cada espacio de tu tienda estará siempre listo para tu personalización
+2. Podrás integrar todos tus software de manejo como CRM o ERP, para agilizar tus procesos de identificación y fidelización de clientes, y de facturación y gestión de inventarios. De igual forma, podrás siempre mantener tus inventarios al día a través de las APIs creadas para ello. 
+3. Tendrás acceso 24/7 al Ambiente VTEX, a través del cual podrás hacer actualizaciones de categorías, productos, promociones y cupones; como también, descargar reportes y conocer estados de ventas en vivo. 
+4. Tú y tus clientes recibirán notificaciones de venta, compra y estado del producto por correo electrónico.
+5. También podrás integrarte con compañías transportadoras para brindarle a tu cliente una solución integral en la venta.
+6. Además, a través de la Tienda VTEX podrás crear desarrollos a tu medida, en los que tus clientes pueden tener espacios de personalización de tus productos, o vivir experiencias de usuario increíbles a través de diferentes aplicativos.  
+
+¿Estamos listos? 
+¡Hablemos! 
+(espacio para info de contacto)`
         }
-
-
-       
     }
   },
   
